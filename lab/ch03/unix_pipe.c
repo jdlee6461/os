@@ -38,7 +38,7 @@ int main(void)
 		return 1;
 	}
 
-	if (pid > 0) {  /* parent process */
+	if (pid == 0) {  /* parent process */
 		/* close the unused end of the pipe */
 		close(fd[READ_END]);
 
@@ -51,10 +51,10 @@ int main(void)
 	else { /* child process */
 		/* close the unused end of the pipe */
 		close(fd[WRITE_END]);
-
+		wait(NULL);
 		/* read from the pipe */
 		read(fd[READ_END], read_msg, BUFFER_SIZE);
-		printf("child read %s\n",read_msg);
+		printf("parent read %s\n",read_msg);
 
 		/* close the write end of the pipe */
 		close(fd[READ_END]);

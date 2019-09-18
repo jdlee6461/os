@@ -23,7 +23,7 @@ int main()
 	}
 	else if (pid > 0) { /* parent process */
 		wait(NULL);
-		printf ("PARENT: value = %d\n",value); /* LINE A */
+		printf ("PARENT: value = %d\n", value); /* LINE A */
 		return 0;
 	}
 }

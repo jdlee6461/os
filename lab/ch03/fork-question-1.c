@@ -19,11 +19,13 @@ int main()
 	
 	if (pid == 0) { /* child process */
 		value += 15;
+		printf ("CHILD (%d): value = %d\n", getpid(), value); /* LINE A */
 		return 0;
 	}
 	else if (pid > 0) { /* parent process */
 		wait(NULL);
-		printf ("PARENT: value = %d\n", value); /* LINE A */
+		printf ("PARENT (%d): value = %d\n", getpid(), value); /* LINE A */
+		sleep(10);
 		return 0;
 	}
 }

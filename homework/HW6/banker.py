@@ -5,11 +5,11 @@ import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
 def banker(allocations, needs, available):
-    continue
+    pass
 
 
 def req(process, request, allocations, needs, available):
-    continue
+    pass
         
 
 if __name__ == "__main__":
